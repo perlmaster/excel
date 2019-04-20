@@ -1,0 +1,22 @@
+Sub ListSheetNames()
+     Dim R As Range
+     Dim WS As Worksheet
+     Set R = ActiveCell
+     For Each WS In ThisWorkbook.Worksheets
+         R.Value = WS.Name
+         Set R = R(2, 1)
+     Next WS
+End Sub
+ 
+ 
+Select the cell where the list should start and run the code above.
+ 
+====================
+ 
+Sub ListTabNames()
+Dim x As Integer
+For x = 1 To Worksheets.Count
+Cells(x, 1).Value = Worksheets(x).Name
+Next x
+Cells(Worksheets.Count + 1, 1).Value = "The End"
+End Sub
